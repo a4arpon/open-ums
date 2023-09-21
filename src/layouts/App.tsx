@@ -1,5 +1,5 @@
 import Button from '@/components/shared/Button'
-import Card from '../components/shared/Card'
+import Card from '@/components/shared/Card'
 
 const App = () => {
   return (

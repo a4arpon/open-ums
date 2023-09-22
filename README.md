@@ -100,7 +100,7 @@ To get started with this project, follow these steps:
 1. Clone the repository to your local machine.
 
 ```bash
-git clone
+git clone https://github.com/a4arpon/open-ums.git
 ```
 
 2. Install project dependencies using Yarn or npm.

@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  font-family: 'Jost', sans-serif;
+  box-sizing: border-box;
+  @apply bg-light text-dark;
+}

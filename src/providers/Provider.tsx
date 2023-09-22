@@ -1,8 +1,13 @@
-import { ReactChildren } from '@/interfaces/Shared-Interface'
 import Store from '@/redux/Store'
+import Routes from '@/routes/Router'
 import { Provider as ReduxProvider } from 'react-redux'
-const Provider: React.FC<ReactChildren> = ({ children }) => {
-  return <ReduxProvider store={Store}>{children}</ReduxProvider>
+import { RouterProvider } from 'react-router-dom'
+const Provider = () => {
+  return (
+    <ReduxProvider store={Store}>
+      <RouterProvider router={Routes} />
+    </ReduxProvider>
+  )
 }
 
 export default Provider

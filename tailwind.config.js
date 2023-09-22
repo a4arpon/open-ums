@@ -2,7 +2,13 @@
 export default {
   content: ['./src/**/*.tsx'],
   theme: {
-    extend: {},
+    colors: {
+      primary: '#89b1fd',
+      secondary: '#bfecdd',
+      warn: '#f8ec70',
+      dark: '#111618',
+      light: '#f5f5f5',
+    },
   },
   plugins: [],
 }

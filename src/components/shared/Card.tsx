@@ -1,8 +1,8 @@
-import { CardProps } from '@/interfaces/Shared-Interface'
+import { ReactChildren } from '@/interfaces/Children-Interface'
 import twClassName from '@/lib/twClassName'
-import { cva } from 'class-variance-authority'
+import { VariantProps, cva } from 'class-variance-authority'
 
-export const cardVariants = cva('p-3 text-light w-full', {
+const cardVariants = cva('p-3 text-light w-full', {
   variants: {
     variant: {
       primary: 'bg-primary',
@@ -42,6 +42,8 @@ export const cardVariants = cva('p-3 text-light w-full', {
     type: 'flex',
   },
 })
+interface CardProps extends ReactChildren, VariantProps<typeof cardVariants> {}
+
 const Card: React.FC<CardProps> = ({
   children,
   variant,

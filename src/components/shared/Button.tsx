@@ -1,29 +1,29 @@
-import { ButtonProps } from '@/interfaces/Shared-Interface'
 import twClassName from '@/lib/twClassName'
-import { cva } from 'class-variance-authority'
+import { VariantProps, cva } from 'class-variance-authority'
 
-export const buttonVariants = cva(
-  'flex text-light justify-center gap-2 items-center py-2 rounded-md  duration-150 ease-in-out transition font-semibold uppercase',
+const buttonVariants = cva(
+  'flex justify-center gap-2 items-center py-2 duration-200 ease-in-out transition uppercase',
   {
     variants: {
       variant: {
-        primary: 'bg-primary hover:bg-primary/90',
-        secondary: 'bg-secondary hover:bg-secondary/90',
-        dark: 'bg-dark hover:bg-dark/90',
-        light: 'bg-light text-dark hover:bg-light/90',
-        ghost: 'hover:bg-dark/10 text-dark',
-        warn: 'bg-warn text-dark hover:bg-warn/90',
-      },
-      fSize: {
-        sm: 'text-base',
-        md: 'text-lg',
+        primary: 'bg-primary hover:bg-primary/95',
+        secondary: 'bg-secondary hover:bg-secondary/95',
+        dark: 'bg-dark hover:bg-dark/95 text-light',
+        light: 'bg-light text-dark hover:bg-light/95',
+        ghost: 'hover:bg-dark/10',
+        warn: 'bg-warn hover:bg-warn/95',
       },
       rounded: {
         sm: 'rounded-sm',
         md: 'rounded-md',
         xl: 'rounded-2xl',
       },
-      fw: {
+      fontSize: {
+        sm: 'text-base',
+        md: 'text-lg',
+        xl: 'text-xl',
+      },
+      fontWidth: {
         base: 'font-medium',
         bold: 'font-semibold',
       },
@@ -34,29 +34,36 @@ export const buttonVariants = cva(
       width: {
         full: 'w-full',
         fit: 'w-fit px-6',
-        'fit-4': 'w-fit px-4',
+        'fit-p4': 'w-fit px-4',
       },
     },
 
     defaultVariants: {
       variant: 'primary',
-      fSize: 'sm',
-      rounded: 'sm',
-      fw: 'base',
+      fontSize: 'sm',
+      rounded: 'md',
+      fontWidth: 'base',
       scale: 'in',
       width: 'fit',
     },
   }
 )
 
-const Button: React.FC<ButtonProps> = ({
+interface ButtonPropsWithVariants
+  extends React.ButtonHTMLAttributes<HTMLElement>,
+    VariantProps<typeof buttonVariants> {
+  link?: string
+  target?: string
+}
+
+const Button: React.FC<ButtonPropsWithVariants> = ({
   children,
   variant,
-  fSize,
+  fontSize,
   disabled,
   onClick,
   link,
-  fw,
+  fontWidth,
   rounded,
   scale,
   width,
@@ -65,7 +72,14 @@ const Button: React.FC<ButtonProps> = ({
     return (
       <button
         className={twClassName(
-          buttonVariants({ variant, fSize, fw, rounded, scale, width })
+          buttonVariants({
+            variant,
+            fontSize: fontSize,
+            fontWidth,
+            rounded,
+            scale,
+            width,
+          })
         )}
         onClick={onClick}
         disabled={disabled}
@@ -77,7 +91,9 @@ const Button: React.FC<ButtonProps> = ({
     return (
       <button
         className={twClassName(
-          buttonVariants({ variant, fSize, fw, rounded, scale, width })
+          buttonVariants({
+            variant,
+          })
         )}
       >
         {children}

@@ -1,9 +1,17 @@
+import Public from '@/layouts/Public'
+import Home from '@/pages/Home'
 import { createBrowserRouter } from 'react-router-dom'
 
 const Routes = createBrowserRouter([
   {
     path: '/',
-    element: <h1>Hello world</h1>,
+    element: <Public />,
+    children: [
+      {
+        path: '/',
+        element: <Home />,
+      },
+    ],
   },
 ])
 

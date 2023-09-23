@@ -11,7 +11,7 @@ const ProfileCard = () => {
         <p>Email: a4arpon@gmail.com</p>
       </div>
       <div className="flex justify-end">
-        <Button variant="primary" link={`/contacts/${232323}`}>
+        <Button variant="dark" link={`/contacts/${232323}`}>
           Details
         </Button>
       </div>

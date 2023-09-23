@@ -1,17 +1,32 @@
+import { Contact } from '@/interfaces/Contact-Interface'
 import Button from '../shared/Button'
 import Card from '../shared/Card'
 
-const ProfileCard = () => {
+const ProfileCard: React.FC<Contact> = ({
+  id,
+  name,
+  email,
+  phone,
+  photo,
+  profession,
+}) => {
   return (
     <Card>
-      <h2 className="text-xl font-semibold">Rechel Kent</h2>
+      <div className="h-72 overflow-hidden rounded-md">
+        <img
+          src={photo}
+          alt={`Photo of ${name}`}
+          className="h-full w-full object-cover object-top duration-300 hover:scale-105"
+        />
+      </div>
+      <h2 className="mt-5 text-xl font-semibold">{name}</h2>
       <div>
-        <p>Profession: Plumber</p>
-        <p>Phone: 8801995942029</p>
-        <p>Email: a4arpon@gmail.com</p>
+        <p>Profession: {profession || 'N/A'}</p>
+        <p>Phone: {phone || 'N/A'}</p>
+        <p>Email: {email || 'N/A'}</p>
       </div>
       <div className="flex justify-end">
-        <Button variant="dark" link={`/contacts/${232323}`}>
+        <Button variant="dark" link={`/contacts/${id}`}>
           Details
         </Button>
       </div>

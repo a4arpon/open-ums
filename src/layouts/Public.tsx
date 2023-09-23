@@ -2,7 +2,7 @@ import { Outlet } from 'react-router-dom'
 
 const Public = () => {
   return (
-    <div className="container mx-auto">
+    <div className="container p-2">
       <Outlet />
     </div>
   )

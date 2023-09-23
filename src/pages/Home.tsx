@@ -1,17 +1,18 @@
-import Button from '@/components/shared/Button'
+import ProfileCard from '@/components/others/ProfileCard'
 
 const Home = () => {
   return (
-    <div className="m-10 flex flex-wrap gap-2">
-      <Button fontWidth="bold" fontSize="xl">
-        Click Me
-      </Button>
-      <Button variant="secondary" fontWidth="bold" fontSize="xl">
-        Click Me
-      </Button>
-      <Button variant="warn">Click Me</Button>
-      <Button variant="dark">Click Me</Button>
-      <Button variant="ghost">Click Me</Button>
+    <div className="grid gap-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
+      <ProfileCard />
+      <ProfileCard />
+      <ProfileCard />
+      <ProfileCard />
+      <ProfileCard />
+      <ProfileCard />
+      <ProfileCard />
+      <ProfileCard />
+      <ProfileCard />
+      <ProfileCard />
     </div>
   )
 }

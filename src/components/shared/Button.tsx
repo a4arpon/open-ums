@@ -1,5 +1,6 @@
 import twClassName from '@/lib/twClassName'
 import { VariantProps, cva } from 'class-variance-authority'
+import { Link } from 'react-router-dom'
 
 const buttonVariants = cva(
   'flex justify-center gap-2 items-center py-2 duration-200 ease-in-out transition uppercase',
@@ -25,7 +26,8 @@ const buttonVariants = cva(
       },
       fontWidth: {
         base: 'font-medium',
-        bold: 'font-semibold',
+        'semi-bold': 'font-semibold',
+        bold: 'font-bold',
       },
       scale: {
         in: 'active:scale-95',
@@ -41,8 +43,8 @@ const buttonVariants = cva(
     defaultVariants: {
       variant: 'primary',
       fontSize: 'sm',
-      rounded: 'md',
-      fontWidth: 'base',
+      rounded: 'sm',
+      fontWidth: 'semi-bold',
       scale: 'in',
       width: 'fit',
     },
@@ -63,6 +65,7 @@ const Button: React.FC<ButtonPropsWithVariants> = ({
   disabled,
   onClick,
   link,
+  target,
   fontWidth,
   rounded,
   scale,
@@ -89,7 +92,9 @@ const Button: React.FC<ButtonPropsWithVariants> = ({
     )
   } else {
     return (
-      <button
+      <Link
+        to={link}
+        target={target}
         className={twClassName(
           buttonVariants({
             variant,
@@ -97,7 +102,7 @@ const Button: React.FC<ButtonPropsWithVariants> = ({
         )}
       >
         {children}
-      </button>
+      </Link>
     )
   }
 }

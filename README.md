@@ -1,6 +1,6 @@
-# User Management System
+# Open Contact Database
 
-This is a user management System that allows to fetch and display user profiles from API endpoint. Users are presented with a list view containing user cards displaying basic information, and they can click on each card to access a detailed view with more information about the selected user. The project follows best practices for React development and is designed to be maintainable and well-structured.
+This is a Open Contact Database that allows to fetch and display user profiles from API endpoint. Users are presented with a list view containing user cards displaying basic information, and they can click on each card to access a detailed view with more information about the selected user. The project follows best practices for React development and is designed to be maintainable and well-structured.
 
 ## Project Structure
 

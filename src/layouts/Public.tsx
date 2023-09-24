@@ -5,7 +5,7 @@ const Public = () => {
   return (
     <>
       <Header />
-      <div className="container p-2">
+      <div className="container my-10 p-2">
         <Outlet />
       </div>
     </>

@@ -18,6 +18,7 @@ const buttonVariants = cva(
         sm: 'rounded-sm',
         md: 'rounded-md',
         xl: 'rounded-2xl',
+        full: 'rounded-full',
       },
       fontSize: {
         sm: 'text-base',

@@ -47,7 +47,7 @@ const Contact = () => {
               <img
                 src={contact?.photo}
                 alt={`Photo of ${contact?.name}`}
-                className="h-80 w-64 rounded-md"
+                className="h-80 w-64 rounded-md object-cover"
               />
             </div>
             <div>

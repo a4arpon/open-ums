@@ -22,7 +22,9 @@ const Home = () => {
             contacts?.map((item) => <ProfileCard {...item} key={item.id} />)}
         </div>
         <div className="my-10 flex items-center justify-center">
-          <Button onClick={() => reSlice(pagination)}>Load More</Button>
+          <Button onClick={() => reSlice(pagination)} variant="dark">
+            Load More
+          </Button>
         </div>
       </>
     )

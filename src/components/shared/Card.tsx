@@ -51,7 +51,9 @@ const cardVariants = cva('p-3 text-light w-full', {
     align: 'between',
   },
 })
-interface CardProps extends ReactChildren, VariantProps<typeof cardVariants> {}
+interface CardProps extends ReactChildren, VariantProps<typeof cardVariants> {
+  aos?: string
+}
 
 const Card: React.FC<CardProps> = ({
   children,
@@ -60,10 +62,11 @@ const Card: React.FC<CardProps> = ({
   rounded,
   fontWidth,
   type,
+  aos,
 }) => {
   return (
     <div
-      data-aos="zoom-in-down"
+      data-aos={aos}
       className={twClassName(
         cardVariants({ variant, fontSize, rounded, fontWidth, type })
       )}

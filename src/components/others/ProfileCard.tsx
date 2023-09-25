@@ -11,7 +11,7 @@ const ProfileCard: React.FC<Contact> = ({
   profession,
 }) => {
   return (
-    <Card>
+    <Card aos="zoom-in-up">
       <div className="h-72 overflow-hidden rounded-md">
         <img
           src={photo}

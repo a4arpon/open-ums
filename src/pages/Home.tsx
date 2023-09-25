@@ -4,7 +4,9 @@ import Loader from '@/components/shared/Loader'
 import SlicedData from '@/lib/pagination'
 import { Helmet } from 'react-helmet-async'
 const Home = () => {
+  // Destructure data from the redux hook
   const { contacts, isLoading, reSlice, pagination } = SlicedData()
+  // Check if data is still loading
   if (!isLoading) {
     return (
       <>
@@ -25,6 +27,7 @@ const Home = () => {
       </>
     )
   } else {
+    // Render a loading spinner when data is still loading
     return <Loader />
   }
 }

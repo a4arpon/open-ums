@@ -13,6 +13,10 @@ const Routes = createBrowserRouter([
         element: <Home />,
       },
       {
+        path: '/contacts',
+        element: <Home />,
+      },
+      {
         path: '/contacts/:id',
         element: <Contact />,
       },

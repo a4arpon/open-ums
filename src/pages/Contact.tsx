@@ -6,8 +6,11 @@ import { Helmet } from 'react-helmet-async'
 import { useParams } from 'react-router-dom'
 
 const Contact = () => {
+  // extract data form redux query
   const { data: contacts, isLoading } = useGetContactsQuery()
+  // Get the "id" parameter from the route
   const { id } = useParams()
+  // Find the contact with the matching "id" from the fetched data
   const contact = contacts?.find((item) => item.id === id)
 
   if (!isLoading && contact) {
@@ -67,6 +70,7 @@ const Contact = () => {
       </>
     )
   } else {
+    // Render a loading spinner when data is still loading
     return <Loader />
   }
 }

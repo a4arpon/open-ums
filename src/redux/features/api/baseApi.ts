@@ -18,14 +18,17 @@ const axiosBaseQuery = (
 > => {
   return async ({ url, method, data, params }) => {
     try {
+      // Send a request to the specified URL using axios
       const result = await axiosInstance({
         url: baseUrl + url,
         method,
         data,
         params,
       })
+      // Return the data from the successful request
       return { data: result.data }
     } catch (axiosError) {
+      // Handle any errors that occur during the request
       const err = axiosError as AxiosError
       return {
         error: {
@@ -38,12 +41,13 @@ const axiosBaseQuery = (
 }
 
 const baseApi = createApi({
+  // slice name for the API
   reducerPath: 'baseApi',
   baseQuery: axiosBaseQuery({
     baseUrl: 'https://api.json-generator.com/templates/mXTCCXh3HU7T',
   }),
-
   endpoints: (builder) => ({
+    // getContacts endpoint for fetching contacts
     getContacts: builder.query<Contact[], void>({
       query: () => ({
         url: '/data',

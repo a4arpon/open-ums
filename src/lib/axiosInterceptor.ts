@@ -6,7 +6,6 @@ const axiosInstance: AxiosInstance = axios.create() // Create the Axios instance
 axiosInstance.interceptors.request.use(
   (config) => {
     config.headers.Authorization = `Bearer ${import.meta.env.VITE_AUTH_KEY}`
-    console.log(import.meta.env.VITE_AUTH_KEY)
     return config
   },
   (error) => {

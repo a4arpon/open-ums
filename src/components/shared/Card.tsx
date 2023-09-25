@@ -63,6 +63,7 @@ const Card: React.FC<CardProps> = ({
 }) => {
   return (
     <div
+      data-aos="zoom-in-down"
       className={twClassName(
         cardVariants({ variant, fontSize, rounded, fontWidth, type })
       )}

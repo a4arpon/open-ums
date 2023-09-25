@@ -3,7 +3,6 @@ import Button from '@/components/shared/Button'
 import Loader from '@/components/shared/Loader'
 import SlicedData from '@/lib/pagination'
 import { Helmet } from 'react-helmet-async'
-
 const Home = () => {
   const { contacts, isLoading, reSlice, pagination } = SlicedData()
   if (!isLoading) {
